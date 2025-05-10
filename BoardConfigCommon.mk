@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021-2024 The LineageOS Project
+# Copyright (C) 2021-2025 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -67,9 +67,6 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
-# Fingerprint
-TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/oplus:libudfps_extension.oplus
-
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     hardware/oplus/vintf/device_framework_matrix.xml \
@@ -78,9 +75,6 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest_odm.xml
-
-# Init
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_oplus
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 3
@@ -113,9 +107,6 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.l
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery))
 BOOT_KERNEL_MODULES := $(strip $(shell cat $(COMMON_PATH)/modules.include.recovery))
 TARGET_MODULE_ALIASES += wlan.ko:qca_cld3_wlan.ko
-
-# Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/oplus_chg/battery/mmi_charging_enable
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
